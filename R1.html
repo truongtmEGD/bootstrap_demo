@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>R-1リース会社ログイン画面(新規予約）</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.css">
+    <link rel="stylesheet" href="/css/nextco/common.css">
+    <link rel="stylesheet" href="/css/nextco/login.css">
+    <script src="/lib/dist/js/jquery-3.4.1.min.js"></script>
+    <script src="/lib/dist/js/jquery-ui.min.js"></script>
+    <script src="lib/dist/js/bootstrap.min.js"></script>
+    
+</head>
+<div class="header">
+    <div class="float-left bannerLogo">
+        <img src="./images/nexco_logo.jpg" class="imgLogo" alt="Logo">
+        <span class="logoText">車両保守予約調整システム</span>
+    </div>
+    <div class="float-right bannerLogoRight">
+        <img src="./images/nexco_logo_right.png" class="imgLogoRight" alt="Logo float-right"><br>
+        <span class="logoTextRight">操作方法</span>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+<body>
+    <div class="headerLogin">
+        <span class="float-left headLogin">カレンダー</span>
+        <!-- <div class="float-right lnkLogin">
+            <a href="#">ログイン</a>
+        </div>
+        <div style="clear: both;"></div> -->
+    </div>
+    <div class="divErrorMessageList">
+        <span>ユーザーIDを入力してください。</span><br>
+        <span>パスワードを入力してください。</span><br>
+        <span>ユーザーIDまたはパスワードが違います。</span>
+    </div>
+    <div class="login">
+        <div class="container loginForm">
+            <form action="" method="post">
+                <div class="form-group fgInput">
+                    <label class="smallLabel" id="lblUserId" for="username">ユーザーID</label>
+                    <input type="text" name="txtUserId" id="txtUserId" class="form-control inputText" placeholder="ユーザーIDを入力してください">
+                </div>
+                <div class="form-group fgInput">
+                    <label class="smallLabel" id="lblPassword" for="password">パスワード</label>
+                    <input type="password" name="txtPassword" id="txtPassword" class="form-control inputText" placeholder="パスワードを入力してください">
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label lblChkBox" id="lblShowPassword"><input id="chkShowPassword" name="chkShowPassword" type="checkbox" class="chkCheckbox">パスワードを表示する</label>
+                </div>
+                <div class="form-group fgLogin">
+                    <button type="submit" id="btnLogin" name="btnLogin" class="btn btn-primary btnLogin"><span>ログイン</span></button>
+                </div>
+                <div class="form-group">
+                    <a href="#" class="lnkRegist" id="lnkResetPassword">パスワードを忘れた場合はこちら</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

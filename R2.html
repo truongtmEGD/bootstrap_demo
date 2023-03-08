@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>R-2 リース会社トップページ画面</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="lib/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/jquery-ui.css" />
+    <link rel="stylesheet" href="/css/nextco/common.css" />
+    <link rel="stylesheet" href="/css/nextco/topPageCompany.css" />
+    <link rel="stylesheet" href="/css/nextco/modal.css" />
+
+    <script src="/lib/dist/js/jquery-3.4.1.min.js"></script>
+    <script src="/lib/dist/js/jquery-ui.min.js"></script>
+    <script src="lib/dist/js/bootstrap.min.js"></script>
+    <script src="js/topPage.js"></script>
+  </head>
+  <div class="header">
+    <div class="float-left bannerLogo">
+      <img src="./images/nexco_logo.jpg" class="imgLogo" alt="Logo" />
+      <span class="logoText">車両保守予約調整システム</span>
+    </div>
+    <div class="float-right bannerLogoRight">
+      <img
+        src="./images/nexco_logo_right.png"
+        class="imgLogoRight"
+        alt="Logo float-right"
+      /><br />
+      <span class="logoTextRight">操作方法</span>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+  <body>
+    <div class="headerLogin">
+      <span class="float-left headLogin">カレンダー</span>
+      <div class="float-right lnkLogin">
+        <span class="lblLabor">Aリース様</span>
+        <a href="#">ログイン</a>
+      </div>
+      <div style="clear: both;"></div>
+    </div>
+    <div class="rowHeader">
+        
+          
+          <div class="selectParent float-left">
+            <select>
+                <option value="0">2020年8月</option>
+                <option value="1">2020年7月</option>
+                <option value="2">2020年6月</option>
+            </select>
+          </div>
+
+
+      <div class="status float-right">
+        <div class="shape1 shape">
+          <div class="innerShare innerShare1"></div>
+          <span class="innerStatus">承認待ち</span>
+        </div>
+        <div class="shape2 shape">
+          <div class="innerShare innerShare2"></div>
+          <span class="innerStatus">メンテ予約</span>
+        </div>
+        <div class="shape3 shape">
+          <div class="innerShare innerShare3"></div>
+          <span class="innerStatus">再調整</span>
+        </div>
+      </div>
+
+      <div style="clear: both;"></div>
+    </div>
+    <!-- Table result -->
+    <div class="row mr-0 ml-0 bookingList">
+        <div class="col-md-4 col-lg-2 pr-0 pl-0">
+            <table class="table table-bordered detaiList dataTable">
+                <thead>
+                    <tr>
+                        <th scope="col" class="firstCol text-center">車種</th>
+                        <th scope="col" class="secondCol text-center">NO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="rowOne " style="height: 55px;">
+                        <td class="dataStatus">ノア</td>
+                        <td class="text-center">81-83</td>
+                    </tr>
+                    <tr class="rowTwo ">
+                        <td class="dataStatus">ノア</td>
+                        <td class="text-center">81-83</td>
+                    </tr>
+                    <tr class="rowThree ">
+                        <td class="dataStatus">ノア</td>
+                        <td class="text-center">81-83</td>
+                    </tr>
+                    <tr class="rowOne " style="height: 55px;">
+                        <td class="dataStatus">ノア</td>
+                        <td class="text-center">81-83</td>
+                    </tr>
+                    <tr class="rowTwo ">
+                        <td class="dataStatus">ノア</td>
+                        <td class="text-center">81-83</td>
+                    </tr>
+                    <tr class="rowThree ">
+                        <td class="dataStatus">ノア</td>
+                        <td class="text-center">81-83</td>
+                    </tr>
+                    <tr class="rowOne " style="height: 55px;">
+                        <td class="dataStatus">ノア</td>
+                        <td class="text-center">81-83</td>
+                    </tr>
+                    <tr class="rowTwo ">
+                        <td class="dataStatus">ノア</td>
+                        <td class="text-center">81-83</td>
+                    </tr>
+                    <tr class="rowThree ">
+                        <td class="dataStatus">ノア</td>
+                        <td class="text-center">81-83</td>
+                    </tr>
+                    <tr class="rowOne lastRow">
+                        <td colspan="2"></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-8 col-lg-10 pr-0 pl-0" style="margin-left: -2px;">
+            <div class="scroller">
+                <table class="table table-bordered detaiList dataTable">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">1</span><br>
+                                <span class="textDay">月曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">2</span><br>
+                                <span class="textDay">火曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">3</span><br>
+                                <span class="textDay">水曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">4</span><br>
+                                <span class="textDay">木曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">5</span><br>
+                                <span class="textDay">金曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">6</span><br>
+                                <span class="textDay sartuday">土曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">7</span><br>
+                                <span class="textDay sunday">日曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">8</span><br>
+                                <span class="textDay">月曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">9</span><br>
+                                <span class="textDay">火曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">10</span><br>
+                                <span class="textDay">水曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">11</span><br>
+                                <span class="textDay">木曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">12</span><br>
+                                <span class="textDay">金曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">13</span><br>
+                                <span class="textDay sartuday">土曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">14</span><br>
+                                <span class="textDay sunday">日曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">15</span><br>
+                                <span class="textDay">月曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">16</span><br>
+                                <span class="textDay">火曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">17</span><br>
+                                <span class="textDay">水曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">18</span><br>
+                                <span class="textDay">木曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">19</span><br>
+                                <span class="textDay">金曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">20</span><br>
+                                <span class="textDay sartuday">土曜</span>
+                            </th scope="col">
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">21</span><br>
+                                <span class="textDay sunday">日曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">22</span><br>
+                                <span class="textDay">月曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">23</span><br>
+                                <span class="textDay">火曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">24</span><br>
+                                <span class="textDay">水曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">25</span><br>
+                                <span class="textDay">木曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">26</span><br>
+                                <span class="textDay">金曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">27</span><br>
+                                <span class="textDay sartuday">土曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">28</span><br>
+                                <span class="textDay sunday">日曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">29</span><br>
+                                <span class="textDay">月曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">30</span><br>
+                                <span class="textDay">火曜</span>
+                            </th>
+                            <th scope="col" class="colDetail text-center">
+                                <span class="textDate">31</span><br>
+                                <span class="textDay">水曜</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="rowOne">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="bookingStatus innerShare2">
+                                    <span>３ヶ</span>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="rowTwo">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="rowThree">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="rowOne">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="bookingStatus innerShare2">
+                                    <span>３ヶ</span>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="rowTwo">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="rowThree">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="rowOne">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="bookingStatus innerShare2">
+                                    <span>３ヶ</span>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="rowTwo">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="rowThree">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    
+   <!-- Modal -->
+<div class="placeModal">
+
+</div>
+    
+  </body>
+</html>

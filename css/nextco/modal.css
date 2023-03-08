@@ -1,0 +1,93 @@
+/*For modal*/
+.modal .modal-content{
+    background-color: #ffffff;
+    width:620px;
+    height: 560px;
+    border-radius: 16px;
+    -moz-border-radius: 16px; /*Firefox*/
+    -webkit-border-radius: 16px; /*Chrome và Safary*/
+  }
+  .modal .modal-header{
+    border: none;
+  }
+  .headerModal{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid #f27700;
+    padding-left: 175px;
+    padding-bottom: 9.5px;
+    margin:0 16px 0 16px;
+  }
+  
+  .modal button.close{
+    color: #F27700;
+    margin: 29px 32.6px 0 0;
+    opacity: 1;
+    font-size: 2.5rem;
+    line-height: 1rem;
+  }
+  .modal .close span:hover{
+    cursor: pointer;
+    color: #F27700;
+    opacity: 1;
+  }
+  .modal .content{
+    margin: 39px 30px ;
+  }
+  .description{
+    margin: 39px 30px 0 29.5px;
+    font-size: 14px;
+    color: #000000;
+    border-bottom: 1px solid #D7D7D7 !important;
+    border: none;
+    padding:0 0 17.5px 15.5px;
+  }
+  .descriptionNo1{
+    margin-right: 55px;
+  }
+  .modal .text1{
+    border: none;
+    border-right: 1px solid #D7D7D7 !important;
+    padding-right: 20px;
+  }
+  .modal .text2{
+    padding-left: 20px;
+  }
+  .modal .vehiceStoreage{
+    margin: 0 30px 0 29.5px;
+    font-size: 14px;
+    color: #000000;
+    border-bottom: 1px solid #D7D7D7 !important;
+    border: none;
+    padding-left:15.5px;
+  }
+  .modal .divVehiceComment{
+    margin: 0 30px 0 29.5px;
+    font-size: 14px;
+    color: #000000;
+    padding-left:15.5px;
+  }
+  .modal .divVehiceGroup{
+    margin: 20.5px 30px 0 29.5px;
+    font-size: 14px;
+    color: #000000;
+    padding-left:15.5px;
+  }
+  .modal .vehiceName{
+  margin: 17.5px 21px 16.5px 0;
+  }
+  .modal .condition{
+    color: #F27700;
+    font-size: 12px;
+    margin: 17.5px 21px 16.5px 0;
+  }
+  .btnBack:active{
+    background-color: #f2f2f2;
+    border: 1px solid #d7d7d7;
+  }
+  .btnBack:visited{
+    background-color: #f2f2f2;
+    border: 1px solid #d7d7d7;
+  }
+  /*End modal*/

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>UPR HACCP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="lib/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.css">
+    <link rel="stylesheet" href="/css/uikit.min.css">
+    <link rel="stylesheet" href="/css/common.css">
+
+    
+    <script src="/lib/dist/js/jquery-3.4.1.min.js"></script>
+    <script src="/lib/dist/js/jquery-ui.min.js"></script>
+    <script src="/lib/dist/js/uikit.min.js"></script>
+    <script src="/lib/dist/js/uikit-icons.min.js"></script>
+    <script src="lib/dist/js/bootstrap.min.js"></script>
+    <script src="/js/common.js"></script>
+</head>
+
+<body style="overflow-x: hidden;">
+    <!-- Begin header -->
+    <div class="uk-preserve-color" style="border-bottom:solid 1px #cccccc">
+        <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200" class="uk-sticky">
+            <div class="uk-navbar-container uk-light uk-navbar-transparent uk-navbar" uk-navbar="">
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-toggle uk-icon uk-navbar-toggle-icon" uk-navbar-toggle-icon="" href="" uk-toggle="target: #offcanvas-left" style="color:#666666"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="navbar-toggle-icon"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg></a>
+                </div>
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo" href="#"><img src="/images/upr_logo.jpg" alt="UPR HACCP" style="height:40px;"></a>
+                </div>
+            </div>
+        </div>
+        <div class="uk-sticky-placeholder" hidden="" style="height: 80px; margin: 0px;"></div>
+    </div>
+
+    <div id="offcanvas-left" uk-offcanvas="" class="uk-offcanvas">
+        <div class="uk-offcanvas-bar">
+            <button class="uk-offcanvas-close uk-icon uk-close" type="button" uk-close=""><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" data-svg="close-icon"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+            <div class="uk-section">
+                <ul class="uk-nav uk-nav-default">
+                    <li class="uk-active"><a href="">ダッシュボード</a></li>
+                    <li class="uk-active"><a href="">ユーザー選択</a></li>
+                    <li class="uk-active"><a href="">健康管理チェック</a></li>
+                    <li class="uk-active"><a href="">温度管理チェック</a></li>
+                    <li class="uk-active"><a href="">セルフチェック</a></li>
+                    <li><a class="linkLogout">ログアウト</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <!-- End header -->
+    <div class="uk-margin-small-top uk-margin-small-left uk-margin-small-right uk-margin-bottom">
+        <div class="row justify-content-center">
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row h-100 justify-content-center align-items-center">
+                            <div class="col-lg-12">
+                                <form class="uk-form-horizontal uk-margin-large uk-form-horizontal mb-0" action="/member/health/index" method="POST">
+
+                                    <legend class="uk-legend">ユーザー選択</legend>
+
+                                    <p>利用するユーザーを選択してください</p>
+                                    <div class="uk-margin">
+                                        <label class="uk-form-label" for="form-stacked-select">登録済みユーザー</label>
+                                        <div class="uk-form-controls">
+                                            <select class="uk-select" id="form-stacked-select" name="vstaid">
+                                            <option value=""></option>
+                                            <option value="">牧野</option>
+                                            <option value="">小鷹</option>
+                                        </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-6 col-sm-12">
+                                            <input type="button" class="uk-button uk-button-primary uk-button-large uk-width-1-1" name="loginByName" id="loginByName" value="選択する">
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <div class="row h-100 justify-content-center align-items-center">
+                            <div class="col-lg-12">
+                                <form method="POST" class="mb-0">
+                                    <p>作業者ログイン</p>
+                                    <div class="uk-margin">
+                                        <div class="uk-inline uk-width-1-1">
+                                            <span class="uk-form-icon uk-icon" uk-icon="">
+                                                
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="width: 20px; height: 20px;" viewBox="0 0 20 20">
+                                                    <path d="M 12.075 10.812 c 1.358 -0.853 2.242 -2.507 2.242 -4.037 c 0 -2.181 -1.795 -4.618 -4.198 -4.618 S 5.921 4.594 5.921 6.775 c 0 1.53 0.884 3.185 2.242 4.037 c -3.222 0.865 -5.6 3.807 -5.6 7.298 c 0 0.23 0.189 0.42 0.42 0.42 h 14.273 c 0.23 0 0.42 -0.189 0.42 -0.42 C 17.676 14.619 15.297 11.677 12.075 10.812 M 6.761 6.775 c 0 -2.162 1.773 -3.778 3.358 -3.778 s 3.359 1.616 3.359 3.778 c 0 2.162 -1.774 3.778 -3.359 3.778 S 6.761 8.937 6.761 6.775 M 3.415 17.69 c 0.218 -3.51 3.142 -6.297 6.704 -6.297 c 3.562 0 6.486 2.787 6.705 6.297 H 3.415 Z" />
+                                                </svg>
+                                            </span>
+                                            <input class="uk-input uk-form-large" type="text" placeholder="Login ID" name="txtAccount" id="txtAccount" value="">
+                                        </div>
+                                        <div class="alert" id="msgLogin" role="alert"><span style="color:#cc0000"></span></div>
+
+                                    </div>
+                                    <div class="uk-margin">
+                                        <div class="uk-inline uk-width-1-1">
+                                            <span class="uk-form-icon uk-icon" uk-icon="icon: lock"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="lock"><rect fill="none" stroke="#000" height="10" width="13" y="8.5" x="3.5"></rect><path fill="none" stroke="#000" d="M6.5,8 L6.5,4.88 C6.5,3.01 8.07,1.5 10,1.5 C11.93,1.5 13.5,3.01 13.5,4.88 L13.5,8"></path></svg></span>
+                                            <input class="uk-input uk-form-large" type="txtPassword" placeholder="Password" name="txtPassword" id="password">
+                                        </div>
+                                        <div class="alert" id="msgPassword" role="alert"><span style="color:#cc0000"></span></div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-sm-12" style="margin-bottom: 10px;">
+                                            <input type="button" class="uk-button uk-button-primary uk-button-large uk-width-1-1" name="loginButton" id="loginButton" value="ログイン">
+                                        </div>
+                                        <div class="col-lg-6 col-sm-12">
+                                            <input type="button" class="uk-button uk-button-primary uk-button-large uk-width-1-1 bg-warning" name="logoutButton" id="logoutButton" value="ログアウト">
+                                        </div>
+                                    </div>
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <div class="row h-100 justify-content-center align-items-center">
+                            <div class="col-lg-12">
+                                <form method="POST" class="mb-0">
+                                    <p>ユーザー新規登録</p>
+                                    <div class="uk-margin">
+                                        <div class="uk-inline uk-width-1-1">
+                                            <span class="uk-form-icon uk-icon" uk-icon="">
+                                                
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="width: 20px; height: 20px;" viewBox="0 0 20 20">
+                                                    <path d="M 12.075 10.812 c 1.358 -0.853 2.242 -2.507 2.242 -4.037 c 0 -2.181 -1.795 -4.618 -4.198 -4.618 S 5.921 4.594 5.921 6.775 c 0 1.53 0.884 3.185 2.242 4.037 c -3.222 0.865 -5.6 3.807 -5.6 7.298 c 0 0.23 0.189 0.42 0.42 0.42 h 14.273 c 0.23 0 0.42 -0.189 0.42 -0.42 C 17.676 14.619 15.297 11.677 12.075 10.812 M 6.761 6.775 c 0 -2.162 1.773 -3.778 3.358 -3.778 s 3.359 1.616 3.359 3.778 c 0 2.162 -1.774 3.778 -3.359 3.778 S 6.761 8.937 6.761 6.775 M 3.415 17.69 c 0.218 -3.51 3.142 -6.297 6.704 -6.297 c 3.562 0 6.486 2.787 6.705 6.297 H 3.415 Z" />
+                                                </svg>
+                                            </span>
+                                            <input class="uk-input uk-form-large" type="text" placeholder="Name" name="txtName" id="txtName" value="">
+                                        </div>
+                                        <div class="alert" id="msgLogin" role="alert"><span style="color:#cc0000"></span></div>
+
+                                    </div>
+                                    <div class="uk-margin">
+                                        <div class="uk-inline uk-width-1-1">
+                                            <span class="uk-form-icon uk-icon" uk-icon="icon: lock"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="lock"><rect fill="none" stroke="#000" height="10" width="13" y="8.5" x="3.5"></rect><path fill="none" stroke="#000" d="M6.5,8 L6.5,4.88 C6.5,3.01 8.07,1.5 10,1.5 C11.93,1.5 13.5,3.01 13.5,4.88 L13.5,8"></path></svg></span>
+                                            <input class="uk-input uk-form-large" type="password" placeholder="Password" name="txtChangePass" id="txtChangePass">
+                                        </div>
+                                        <div class="alert" id="msgChangepa" role="alert"><span style="color:#cc0000"></span></div>
+
+                                    </div>
+                                    <div class="uk-margin">
+                                        <div class="uk-inline uk-width-1-1">
+                                            <span class="uk-form-icon uk-icon" uk-icon="icon: lock"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="lock"><rect fill="none" stroke="#000" height="10" width="13" y="8.5" x="3.5"></rect><path fill="none" stroke="#000" d="M6.5,8 L6.5,4.88 C6.5,3.01 8.07,1.5 10,1.5 C11.93,1.5 13.5,3.01 13.5,4.88 L13.5,8"></path></svg></span>
+                                            <input class="uk-input uk-form-large" type="password" placeholder="Confirm passwod" name="txtCfPassword" id="txtCfPassword">
+                                        </div>
+                                        <div class="alert" id="msgCfPassword" role="alert"><span style="color:#cc0000"></span></div>
+
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-sm-12 col-lg-6 text-center">
+                                            <div class="uk-margin">
+                                                <input type="button" class="uk-button uk-button-primary uk-button-large uk-width-1-1" name="loginButton" id="loginButton" value="保存">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>

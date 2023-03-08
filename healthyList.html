@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>UPR HACCP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.css">
+    <link rel="stylesheet" href="/css/uikit.min.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/filter.css">
+
+
+    <link rel="stylesheet" href="/css/datepicker.min.css">
+    <link rel="stylesheet" href="/css/checksheet.css">
+    <link href="/fonts/font-awesome.css" rel="stylesheet">
+
+
+    <script src="/lib/dist/js/jquery-3.4.1.min.js"></script>
+    <script src="/lib/dist/js/jquery-ui.min.js"></script>
+    <script src="/lib/dist/js/uikit.min.js"></script>
+    <script src="/lib/dist/js/uikit-icons.min.js"></script>
+    <script src="lib/dist/js/bootstrap.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/filter.js"></script>
+    <script src="/js/checkSheet.js"></script>
+    <script src="/js/datepicker.min.js"></script>
+    <script src="/js/datepicker.en.js"></script>
+
+
+
+
+</head>
+
+<body style="overflow-x: hidden;">
+    
+
+    <div class="row mt-2">
+        <div class="col-md-4">
+            <h5 class="uk-heading-bullet">個人健康管理チェック　一覧</h5>
+        </div>
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-5">
+            <a href="#" class="uk-button uk-button-default uk-button-small uk-button-primary float-right uk-bt-modal" id="btnExport" name="btnExport">出力</a>
+        </div>
+        <div class="col-md-1">
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <legend class="uk-legend"></legend>
+    <div class="table-responsive-sm table-responsive-md">
+        <div class="row h-100 justify-content-center align-items-center ">
+            <div class="col-sm-12 col-md-12 col-lg-10 text-center" style="height: 400px;">
+                <table class=" table table-bordered table-striped mb-0 uk-table uk-table-divider" id="filterPendingApprove">
+                    <thead>
+                        <tr>
+                            <th class="text-center d-none"></th>
+                            <th cmanFilterBtn class="text-center" style="width: 20%;">
+                                <span class="mr-2">日付</span>
+                                <i class="fa fa-calendar dateIconSearch" aria-hidden="true"></i>
+                            </th>
+                            <th cmanFilterBtn class="text-center" style="width: 20%;">
+                                <span class="dot"></span>
+                                <span class="mr-1">:</span><span>GOOD</span>
+                            </th>
+                            <th cmanFilterBtn class="text-center" style="width: 20%;">
+                                <img src="images/triangle.png" alt="header" style="
+                                    position: relative;
+                                    width: 15px;
+                                    height: 15px;
+                                    top: 0;
+                                    right: 10px;
+                                ">
+                                <span class=" mr-1 ">:</span><span>キズ・手荒れ</span></th>
+                            <th cmanFilterBtn class="text-center" style="width: 20%;">
+                                <!-- <img src="images/multiple_sign.png " alt="header " style=" position: relative; width: 15px; height: 15px; top: 0; right: 10px; "> -->
+                                <span class="sign">&#215;</span>
+
+                                <span class="mr-1">:</span><span>体調不良</span>
+
+                            </th>
+                            <th cmanFilterBtn class="text-center" style="width: 10%;">承認</th>
+                            <th class="text-center" style="width: 10%;">詳細</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="d-none "></td>
+                            <td>2020/03/05</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td><span class="oi oi-check "></span></td>
+                            <td><a href="../healthyList_Edit.html" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal ">詳細</a></td>
+                        </tr>
+                        <tr>
+                            <td class="d-none "></td>
+                            <td>2020/03/05</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>
+                                <span class="spApprove">
+                                    ✓
+                                </span>
+                            </td>
+                            <td><a href="../healthyList_Edit.html" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal ">詳細</a></td>
+                        </tr>
+                        <tr>
+                            <td class="d-none "></td>
+                            <td>2020/03/05</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>
+                                <span class="spApprove">
+                                    ✓
+                                </span>
+                            </td>
+                            <td><a href="../healthyList_Edit.html" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal ">詳細</a></td>
+                        </tr>
+                        <tr>
+                            <td class="d-none "></td>
+                            <td>2020/03/05</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>
+                                <span class="spApprove">
+                                    ✓
+                                </span>
+                            </td>
+                            <td><a href="../healthyList_Edit.html" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal ">詳細</a></td>
+                        </tr>
+                        <tr>
+                            <td class="d-none "></td>
+                            <td>2020/03/05</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>
+                                <span class="spApprove">
+                                    ✓
+                                </span>
+                            </td>
+                            <td><a href="../healthyList_Edit.html" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal ">詳細</a></td>
+                        </tr>
+                        <tr>
+                            <td class="d-none "></td>
+                            <td>2020/03/05</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>
+                                <span class="spApprove">
+                                    ✓
+                                </span>
+                            </td>
+                            <td><a href="../healthyList_Edit.html" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal ">詳細</a></td>
+                        </tr>
+                        <tr>
+                            <td class="d-none "></td>
+                            <td>2020/03/05</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>
+                                <span class="spApprove">
+                                    ✓
+                                </span>
+                            </td>
+                            <td><a href="../healthyList_Edit.html" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal ">詳細</a></td>
+                        </tr>
+                        <tr>
+                            <td class="d-none "></td>
+                            <td>2020/03/05</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>
+                                <span class="spApprove">
+                                    ✓
+                                </span>
+                            </td>
+                            <td><a href="../healthyList_Edit.html" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal ">詳細</a></td>
+                        </tr>
+                        <tr>
+                            <td class="d-none "></td>
+                            <td>2020/03/05</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>
+                                <span class="spApprove">
+                                    ✓
+                                </span>
+                            </td>
+                            <td><a href="../healthyList_Edit.html" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal ">詳細</a></td>
+                        </tr>
+                        <tr>
+                            <td class="d-none "></td>
+                            <td>2020/03/05</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td>10/15 人</td>
+                            <td></td>
+                            <td><a href="../healthyList_Edit.html" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal ">詳細</a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div class="row mt-2 justify-content-center align-items-center ">
+                    <div class="col-sm-6 col-lg-4 col-md-4 height-ie pagingNavigation ">
+                        <nav aria-label="Page navigation example ">
+                            <ul class="pagination justify-content-center ">
+                                <li class="page-item disabled ">
+                                    <a class="page-link " href="# " tabindex="-1 ">Previous</a>
+                                </li>
+                                <li class="page-item active "><a class="page-link " href="# ">1</a></li>
+                                <li class="page-item ">
+                                    <a class="page-link " href="# ">2 <span class="sr-only ">(current)</span></a>
+                                </li>
+                                <li class="page-item "><a class="page-link " href="# ">3</a></li>
+                                <li class="page-item ">
+                                    <a class="page-link " href="# ">Next</a>
+                                </li>
+
+                            </ul>
+
+                        </nav>
+
+
+
+
+
+
+                    </div>
+
+                </div>
+                <div class="row justify-content-center ">
+                    <div class="col-lg-2 col-sm-3 col-md-3 ">
+                        <input type="button" class="uk-button uk-button-primary uk-button-large uk-width-1-1 uk-bt-modal " name="btnBackDashboard" id="btnBackDashboard" value="前へ ">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    </div>
+
+    <div class="modal" id="dateSearchModal" tabindex="-1 " role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog " role="document ">
+            <div class="modal-content " style="width: 300px; ">
+                <div class="modal-header ">
+                    <h5 class="modal-title ">Search</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body ">
+                    <input placeholder="Enter date " data-date-format="yyyy/MM/dd " data-language='en' type="text" data-range="true " data-multiple-dates-separator=" - " class="form-control datepicker-here  " id="txtDate " name="txtDate " />
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn uk-button-primary uk-button-large uk-bt-modal" id="btnSearch" name="btnSearch">OK</button>
+                    <button type="button" class="btn uk-button-primary uk-button-large uk-bt-modal bg-warning" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="dateSearchExportModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="width: 300px; ">
+                <div class="modal-header">
+                    <h5 class="modal-title">Search</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    <input id="txtDateExport" name="txtDateExport" placeholder="Enter date" type="text" class="form-control datepicker-here" data-language='en' data-min-view="months" data-view="months" data-date-format="MM/yyyy" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn uk-button-primary uk-button-large uk-bt-modal" id="btnSearch" name="btnSearch">OK</button>
+                    <button type="button" class="btn uk-button-primary uk-button-large uk-bt-modal bg-warning" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

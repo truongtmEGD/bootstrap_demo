@@ -1,0 +1,54 @@
+.daButton {
+    font-size: 1.2em;
+}
+
+#msgLogin,
+#msgPassword {
+    padding-left: 0 !important;
+}
+
+.uk-bt-modal {
+    width: 100px;
+    line-height: 30px !important;
+    padding: 0 !important;
+}
+
+.dateIconSearch:hover {
+    cursor: pointer;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: 1px #666666 solid;
+}
+
+.sign {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    top: 0;
+    right: 10px;
+}
+
+.dateIconSearch {
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 5px;
+    float: right;
+}
+
+.labelUpdate {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.spApprove {
+    font-size: 18px;
+    font-weight: bold;
+}

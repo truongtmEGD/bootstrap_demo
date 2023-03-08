@@ -1,0 +1,68 @@
+.lblLabor{
+    font-size: 14px;
+    color: #FFFFFF;
+    margin: 17px 37px 14px 0;
+}
+.rowHeader{
+    margin: 11px 0 12px 0;
+    padding: 0 21px 0 31px;
+}
+.status{
+    background-color: #FFFFFF;
+    padding: 4px 7px 6px 8px;
+    display: flex;
+}
+.shape{
+    display: flex;
+}
+.shape1{
+    margin-right: 13px;
+}
+.shape2{
+    margin-right: 19px;
+}
+.shape3{
+    margin-right: 0px;
+}
+.innerStatus{
+    font-size: 12px;
+    color: #000000;
+    margin-left: 4px;
+}
+.bookingList{
+    margin-bottom: 356px;
+}
+.lastRow{
+    background-color: #F2F2F2 !important;
+    height: 30px !important;
+}
+.scroller table tbody tr td{
+    cursor: pointer;
+
+}
+.innerShare{
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+  -moz-border-radius: 4px; /*Firefox*/
+  -webkit-border-radius: 4px; /*Chrome và Safary*/
+}
+
+.innerShare1{
+    background-color: #F20002;
+}
+.innerShare2{
+    background-color: #0E800E;
+}
+.innerShare3{
+    background-color:#F27700;
+}
+
+.tableDetail th{
+    width: 116px !important;
+}
+.tableDetail td{
+    width: 116px !important;
+}
+
+

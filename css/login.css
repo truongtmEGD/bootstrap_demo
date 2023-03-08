@@ -1,0 +1,27 @@
+.loginBody{
+    min-height: calc(100vh);
+    align-items: center;
+    display: flex;
+    animation-name: uk-fade;
+    animation-duration: .8s;
+    animation-timing-function: linear;
+    height: 600px;
+}
+.card-signin{
+    padding: 0 40px 20px 40px !important;
+}
+.titleLogin{
+    font-size: 1.5rem !important;
+    line-height: 1.4 !important;
+}
+.form-signin input{
+    height: 55px !important;
+}
+.form-label-group{
+    margin-bottom: 20px !important;
+    
+}
+
+.left-addon input{
+    padding-left: 40px !important;
+}

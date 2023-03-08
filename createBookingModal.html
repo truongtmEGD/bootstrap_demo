@@ -1,0 +1,102 @@
+<div class="modal fade" id="createBookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="headerModalTop">
+            
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="headerModal">
+            <span>予約内容を入力してください</span>
+        </div>
+        <div class="description">
+            <div class="descriptionNo1 float-left">
+                <span class="text1">車種</span>
+                <span>NO</span>
+            </div>
+            <div class="descriptionNo2 float-left">
+                <span class="text1">ノア</span>
+                <span class="text2">81-83</span>
+            </div>
+        </div>
+        <div class="vehiceStoreage">
+            <div class="vehiceName float-left">
+                <span>メンテ内容</span>
+            </div>
+            <div class="condition float-left">
+                <span>必須</span>
+            </div>
+            <div class="vehiceDropdown float-left">
+                <select>
+                    <option value="0">6ヶ月点検</option>
+                    <option value="0">7ヶ月点検</option>
+                    <option value="0">8ヶ月点検</option>
+                </select>
+              </div>
+        </div>
+        <div class="vehiceStoreage">
+            <div class="vehiceName float-left">
+                <span>車両預かり</span>
+            </div>
+            <div class="condition float-left">
+                <span>必須</span>
+            </div>
+            <div class="vehiceDropdown float-left">
+                <select>
+                    <option value="0">8月2日</option>
+                    <option value="0">8月3日</option>
+                    <option value="0">8月4日</option>
+                </select>
+            </div>
+            <div class="checkboxGroup">
+                <label class="containerCheckbox">午前
+                    <input type="checkbox" id="chkShowAMHour" name="chkShowAMHour">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerCheckbox">午後
+                    <input id="chkShowPMHour" name="chkShowPMHour" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+            </div>
+        </div>
+        <div class="vehiceStoreage">
+            <div class="vehiceName float-left" style="margin-right: 35px;">
+                <span>車両返却</span>
+            </div>
+            <div class="condition float-left">
+                <span>必須</span>
+            </div>
+            <div class="vehiceDropdown float-left">
+                <select>
+                    <option value="0">8月2日</option>
+                    <option value="0">8月3日</option>
+                    <option value="0">8月4日</option>
+                </select>
+            </div>
+            <div class="checkboxGroup">
+                <label class="containerCheckbox">午前
+                    <input type="checkbox" id="chkShowAMHour" name="chkShowAMHour">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="containerCheckbox">午後
+                    <input id="chkShowPMHour" name="chkShowPMHour" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+            </div>
+        </div>
+        <div class="divVehiceComment">
+            <div class="vehiceName float-left">
+                <span>コメント</span>
+            </div>
+            <div class="vehiceComment float-left">
+                <textarea class="textAreaComment" placeholder="コメント" rows="5" id="textAreaComment" name="textAreaComment"></textarea>
+            </div>
+        </div>
+        <div class="divVehiceGroup">
+            <button type="button" class="btn float-left btnBack" data-dismiss="modal"><span>キャンセル</span></button>
+            <button type="submit" class="btn float-right btnForgot"><span>確認する</span></button>
+        </div>
+      </div>
+    </div>
+</div>

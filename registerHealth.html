@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://uprhaccp.hnw.tokyo/member/health/regist -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>UPR HACCP</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="./lib/dist/css/jquery-ui.css">
+<script src="./lib/dist/js/jquery-3.4.1.min.js"></script>
+<script src="./lib/dist/js/jquery-ui.min.js"></script>
+<script src="./lib/dist/js/jquery.ui.datepicker-ja.min.js"></script>
+<link rel="stylesheet" href="./lib/dist/css/uikit.min.css">
+<script src="./lib/dist/js/uikit.min.js"></script>
+<script src="./lib/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+
+<div class="uk-preserve-color" style="border-bottom:solid 1px #cccccc">
+	<div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200" class="uk-sticky">
+		<div class="uk-navbar-container uk-light uk-navbar-transparent uk-navbar" uk-navbar="">
+			<div class="uk-navbar-left">
+				<a class="uk-navbar-toggle uk-icon uk-navbar-toggle-icon" uk-navbar-toggle-icon="" href="http://uprhaccp.hnw.tokyo/member/health/regist" uk-toggle="target: #offcanvas-left" style="color:#666666"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="navbar-toggle-icon"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg></a>
+			</div>
+			<div class="uk-navbar-left">
+				<a class="uk-navbar-item uk-logo" href="http://uprhaccp.hnw.tokyo/member/health/regist#"><img src="./images/upr_logo.jpg" alt="UPR HACCP" style="height:40px;"></a>
+			</div>
+		</div>
+	</div><div class="uk-sticky-placeholder" hidden="" style="height: 80px; margin: 0px;"></div>
+</div>
+
+<div id="offcanvas-left" uk-offcanvas="" class="uk-offcanvas">
+  <div class="uk-offcanvas-bar">
+    <button class="uk-offcanvas-close uk-icon uk-close" type="button" uk-close=""><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" data-svg="close-icon"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+    <div class="uk-section">
+      <ul class="uk-nav uk-nav-default">
+	<li class="uk-active"><a href="http://uprhaccp.hnw.tokyo/member/top/index">ダッシュボード</a></li>
+	<li class="uk-active"><a href="http://uprhaccp.hnw.tokyo/member/user/index">ユーザー選択</a></li>
+	<li class="uk-active"><a href="http://uprhaccp.hnw.tokyo/member/health/index">健康管理チェック</a></li>
+	<li class="uk-active"><a href="http://uprhaccp.hnw.tokyo/member/temp/index">温度管理チェック</a></li>
+	<li class="uk-active"><a href="http://uprhaccp.hnw.tokyo/member/self/index">セルフチェック</a></li>
+	<li><a href="http://uprhaccp.hnw.tokyo/member/auth_logout">ログアウト</a></li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<div class="uk-margin-small-top uk-margin-small-left uk-margin-small-right uk-margin-bottom">
+
+<script type="text/javascript">
+function check(){
+
+	$('#reaction_error').html('');
+
+	var health_state = $('[name="health_state"]:checked').val();
+	var reaction = $('#reaction').val();
+	
+	if(health_state == "1"){
+		//alert("登録しました");
+		return true;
+	} else {
+		if(reaction != ""){
+			//alert("登録しました");
+			return true;
+		} else {
+			$('#reaction_error').append('<div class="uk-alert-danger" uk-alert><a class="uk-alert-close" uk-close></a><p>対応を入力してください</p></div>');
+			return false;
+		}
+	}
+
+}
+function disp_select1(){
+	$("#reaction").prop('disabled', false);
+	$('#reaction_list').html('<option value="絆創膏を貼り、手袋をし対応しました"><option value="その他">');
+
+	$('#health_label1').css('background-color','#91c8ff');
+	//$('#health_label2').css('background-color','#1e90ff');
+	$('#health_label3').css('background-color','#91c8ff');
+	$('#health_label4').css('background-color','#91c8ff');
+	$('#health_label2').css('background-color','orange');
+	
+}
+function disp_select2(){
+	$("#reaction").prop('disabled', false);
+	$('#reaction_list').html('<option value="帰宅しました"><option value="その他">');
+
+	$('#health_label1').css('background-color','#91c8ff');
+	$('#health_label2').css('background-color','#91c8ff');
+	$('#health_label4').css('background-color','#91c8ff');
+	//$('#health_label3').css('background-color','#1e90ff');
+	$('#health_label3').css('background-color','orange');
+}
+
+function disp_select4(){
+	$("#reaction").prop('disabled', false);
+	$('#reaction_list').html('<option value="帰宅しました"><option value="その他">');
+
+	$('#health_label1').css('background-color','#91c8ff');
+	$('#health_label2').css('background-color','#91c8ff');
+	$('#health_label3').css('background-color','#91c8ff');
+	//$('#health_label3').css('background-color','#1e90ff');
+	$('#health_label4').css('background-color','orange');
+}
+
+function disable_input(){
+	$("#reaction").prop('disabled', true);
+
+	//$('#health_label1').css('background-color','#1e90ff');
+	$('#health_label2').css('background-color','#91c8ff');
+	$('#health_label3').css('background-color','#91c8ff');
+	$('#health_label4').css('background-color','#91c8ff');
+	$('#health_label1').css('background-color','orange');
+}
+// -->
+</script>
+<style>
+input[type=radio] {
+display: none; /* ラジオボタンを非表示にする */
+}
+.health_label {
+margin: 5px; /* ラベル外側の余白を指定する */
+padding:20px 50px;
+color:#ffffff;
+background-color:#1e90ff;
+border-radius:5px;
+}
+</style>
+
+<form class="uk-form-horizontal uk-margin-large uk-form-horizontal" action="http://uprhaccp.hnw.tokyo/member/health/regist" method="POST" onsubmit="return check()">
+
+	<legend class="uk-legend">個人健康管理チェック</legend>
+
+	<div class="uk-margin">
+		<label class="uk-form-label" for="form-stacked-select">対応者</label>
+		<div class="uk-form-controls">
+		<!-- <select class="uk-select" id="form-stacked-select" name="vstaid">
+			<option value=""></option>
+			<option value="">牧野</option>
+			<option value="">小鷹</option>
+		</select> -->
+		田中
+		    </div>
+	</div>
+	<div class="uk-margin">
+		<div class="uk-form-label">健康状態</div>
+		<div class="uk-form-controls uk-form-controls-text">
+		        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+		            <label class="health_label" id="health_label1"><input class="uk-radio" type="radio" name="health_state" id="health_state1" value="1" onclick="disable_input()"> 〇：GOOD</label>
+					<label class="health_label" id="health_label2"><input class="uk-radio" type="radio" name="health_state" id="health_state2" value="2" onclick="disp_select1()"> △：キズ</label>
+					<label class="health_label" id="health_label4"><input class="uk-radio" type="radio" name="health_state" id="health_state4" value="4" onclick="disp_select4()"> △：手荒れ</label>
+		            <label class="health_label" id="health_label3"><input class="uk-radio" type="radio" name="health_state" id="health_state3" value="3" onclick="disp_select2()"> ×：体調不 </label>
+		        </div>
+		</div>
+
+	</div>
+
+
+	<div class="uk-margin">
+		<label class="uk-form-label" for="reaction">対応</label>
+		<div class="uk-form-controls">
+			<input class="uk-textarea" type="text" name="reaction" id="reaction" list="reaction_list" placeholder="テキスト入力もしくは選択" autocomplete="off" disabled="">
+			<datalist id="reaction_list">
+				<option value="絆創膏を貼り、手袋をし対応しました。">
+				</option><option value="帰宅しました。">
+			</option></datalist>
+			<div id="reaction_error"></div>
+		</div>
+	</div>
+
+	<div class="uk-margin">
+		<label class="uk-form-label" for="memo">備考</label>
+		<div class="uk-form-controls">
+			<textarea class="uk-textarea" name="memo" id="memo" rows="5" placeholder="備考"></textarea>
+		</div>
+	</div>
+
+
+
+<input type="submit" name="submit_regist" class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" value="保存">
+<a class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" href="http://uprhaccp.hnw.tokyo/member/top/index">戻る</a>
+
+</form>
+</div>
+</body></html>

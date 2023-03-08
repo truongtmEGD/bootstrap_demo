@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>UPR HACCP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.css">
+    <link rel="stylesheet" href="/css/uikit.min.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/filter.css">
+    <link rel="stylesheet" href="/css/datepicker.min.css">
+    <link rel="stylesheet" href="/css/checksheet.css">
+    <link href="/fonts/font-awesome.css" rel="stylesheet">
+
+
+    <script src="/lib/dist/js/jquery-3.4.1.min.js"></script>
+    <script src="/lib/dist/js/jquery-ui.min.js"></script>
+    <script src="/lib/dist/js/uikit.min.js"></script>
+    <script src="/lib/dist/js/uikit-icons.min.js"></script>
+    <script src="lib/dist/js/bootstrap.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/filter.js"></script>
+    <script src="/js/refrigerator.js"></script>
+    <script src="/js/datepicker.min.js"></script>
+    <script src="/js/datepicker.en.js"></script>
+
+
+
+
+</head>
+
+<body style="overflow-x: hidden;">
+    <!-- Begin header -->
+    <div class="uk-preserve-color" style="border-bottom:solid 1px #cccccc">
+        <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200" class="uk-sticky">
+            <div class="uk-navbar-container uk-light uk-navbar-transparent uk-navbar" uk-navbar="">
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-toggle uk-icon uk-navbar-toggle-icon" uk-navbar-toggle-icon="" href="" uk-toggle="target: #offcanvas-left" style="color:#666666"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="navbar-toggle-icon"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg></a>
+                </div>
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo" href="#"><img src="/images/upr_logo.jpg" alt="UPR HACCP" style="height:40px;"></a>
+                </div>
+            </div>
+        </div>
+        <div class="uk-sticky-placeholder" hidden="" style="height: 80px; margin: 0px;"></div>
+    </div>
+
+    <div id="offcanvas-left" uk-offcanvas="" class="uk-offcanvas">
+        <div class="uk-offcanvas-bar">
+            <button class="uk-offcanvas-close uk-icon uk-close" type="button" uk-close=""><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" data-svg="close-icon"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+            <div class="uk-section">
+                <ul class="uk-nav uk-nav-default">
+                    <li class="uk-active"><a href="">ダッシュボード</a></li>
+                    <li class="uk-active"><a href="">ユーザー選択</a></li>
+                    <li class="uk-active"><a href="">健康管理チェック</a></li>
+                    <li class="uk-active"><a href="">温度管理チェック</a></li>
+                    <li class="uk-active"><a href="">セルフチェック</a></li>
+                    <li><a class="linkLogout">ログアウト</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <!-- End header -->
+
+    <div class="row mt-2">
+        <div class="col-md-4">
+            <h5 class="uk-heading-bullet">冷蔵庫・冷凍温度管理　一覧</h5>
+        </div>
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-5">
+            <a href="#" class="uk-button uk-button-default uk-button-small uk-button-primary float-right uk-bt-modal" id="btnExport" name="btnExport">帳票出力</a>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+    <legend class="uk-legend"></legend>
+    <div class="table-responsive-sm table-responsive-md">
+        <div class="row h-100 justify-content-center align-items-center ">
+            <div class="col-sm-12 col-md-12 col-lg-10 text-center" style="height: 400px;">
+                <table class=" table table-bordered table-striped mb-0 uk-table uk-table-divider" id="filterPendingApprove">
+                    <thead>
+                        <tr>
+                            <th class="text-center d-none"></th>
+                            <th cmanFilterBtn class="text-center" style="width: 25%;">
+                                <span class="mr-2">日付</span>
+                                <i class="fa fa-calendar dateIconSearch" aria-hidden="true"></i>
+                            </th>
+                            <th cmanFilterBtn class="text-center" style="width: 25%;">
+                                <span class="mr-2">入力達成率</span>
+                            </th>
+                            <th cmanFilterBtn class="text-center" style="width: 25%;">
+                                <span class="mr-2">温度逸脱回数</span>
+                            </th>
+
+                            <th cmanFilterBtn class="text-center" style="width: 15%;">承認</th>
+                            <th class="text-center" style="width: 10%;">詳細</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="d-none "></td>
+                            <td>2020/03/05</td>
+                            <td><span class="text-danger">28 / 30</span></td>
+                            <td>2</td>
+                            <td></td>
+                            <td><a href="../refrigeratorList_Edit.html" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal uk-button-dange">詳細</a></td>
+                        </tr>
+                        <tr>
+                            <td class="d-none "></td>
+                            <td>2020/03/05</td>
+                            <td><span>28 / 30</span></td>
+                            <td>2</td>
+                            <td>
+                                <span class="spApprove">
+                                    ✓
+                                </span>
+                            </td>
+                            <td><a href="../refrigeratorList_Edit.html" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal">詳細</a></td>
+                        </tr>
+                        <tr>
+                            <td class="d-none "></td>
+                            <td>2020/03/05</td>
+                            <td><span>28 / 30</span></td>
+                            <td>2</td>
+                            <td>
+                                <span class="spApprove">
+                                    ✓
+                                </span>
+                            </td>
+                            <td><a href="../refrigeratorList_Edit.html" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal">詳細</a></td>
+                        </tr>
+                        <tr>
+                            <td class="d-none "></td>
+                            <td>2020/03/05</td>
+                            <td><span>28 / 30</span></td>
+                            <td>2</td>
+                            <td>
+                                <span class="spApprove">
+                                    ✓
+                                </span>
+                            </td>
+                            <td><a href="../refrigeratorList_Edit.html" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal">詳細</a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div class="row mt-2 justify-content-center align-items-center ">
+                    <div class="col-sm-6 col-lg-4 col-md-4 height-ie pagingNavigation ">
+                        <nav aria-label="Page navigation example ">
+                            <ul class="pagination justify-content-center ">
+                                <li class="page-item disabled ">
+                                    <a class="page-link " href="# " tabindex="-1 ">Previous</a>
+                                </li>
+                                <li class="page-item active "><a class="page-link " href="# ">1</a></li>
+                                <li class="page-item ">
+                                    <a class="page-link " href="# ">2 <span class="sr-only ">(current)</span></a>
+                                </li>
+                                <li class="page-item "><a class="page-link " href="# ">3</a></li>
+                                <li class="page-item ">
+                                    <a class="page-link " href="# ">Next</a>
+                                </li>
+
+                            </ul>
+
+                        </nav>
+                    </div>
+
+                </div>
+                <div class="row justify-content-center ">
+                    <div class="col-lg-2 col-sm-3 col-md-3 ">
+                        <input type="button" class="uk-button uk-button-primary uk-button-large uk-width-1-1 uk-bt-modal " name="btnBackDashboard" id="btnBackDashboard" value="前へ ">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    </div>
+
+    <div class="modal" id="dateSearchModal" tabindex="-1 " role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog " role="document ">
+            <div class="modal-content " style="width: 300px; ">
+                <div class="modal-header ">
+                    <h5 class="modal-title ">Search</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body ">
+                    <input placeholder="Enter date " data-date-format="yyyy/MM/dd " data-language='en' type="text" data-range="true " data-multiple-dates-separator=" - " class="form-control datepicker-here  " id="txtDate " name="txtDate " />
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn uk-button-primary uk-button-large uk-bt-modal" id="btnSearch" name="btnSearch">OK</button>
+                    <button type="button" class="btn uk-button-primary uk-button-large uk-bt-modal bg-warning" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="dateSearchExportModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="width: 300px; ">
+                <div class="modal-header">
+                    <h5 class="modal-title">Search</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    <input id="txtDateExport" name="txtDateExport" placeholder="Enter date" type="text" class="form-control datepicker-here" data-language='en' data-min-view="months" data-view="months" data-date-format="MM/yyyy" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn uk-button-primary uk-button-large uk-bt-modal" id="btnSearch" name="btnSearch">OK</button>
+                    <button type="button" class="btn uk-button-primary uk-button-large uk-bt-modal bg-warning" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

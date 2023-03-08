@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>UPR HACCP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="lib/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/jquery-ui.css" />
+    <link rel="stylesheet" href="/css/uikit.min.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/filter.css" />
+    <script src="/lib/dist/js/jquery-3.4.1.min.js"></script>
+    <script src="/lib/dist/js/jquery-ui.min.js"></script>
+    <script src="/lib/dist/js/uikit.min.js"></script>
+    <script src="/lib/dist/js/uikit-icons.min.js"></script>
+    <script src="lib/dist/js/bootstrap.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/filter.js"></script>
+    <script src="/js/dashboard.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var test = "truongtm123";
+            console.log(test);
+        });
+    </script>
+</head>
+
+<body style="overflow-x: hidden">
+    <!-- Begin header -->
+    <div class="uk-preserve-color" style="border-bottom: solid 1px #cccccc">
+        <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200" class="uk-sticky">
+            <div class="uk-navbar-container uk-light uk-navbar-transparent uk-navbar" uk-navbar="">
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-toggle uk-icon uk-navbar-toggle-icon" uk-navbar-toggle-icon="" href="" uk-toggle="target: #offcanvas-left" style="color: #666666"><svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+                data-svg="navbar-toggle-icon"
+              >
+                <rect y="9" width="20" height="2"></rect>
+                <rect y="3" width="20" height="2"></rect>
+                <rect y="15" width="20" height="2"></rect></svg
+            ></a>
+                </div>
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo" href="#"><img src="/images/upr_logo.jpg" alt="UPR HACCP" style="height: 40px" /></a>
+                </div>
+            </div>
+        </div>
+        <div class="uk-sticky-placeholder" hidden="" style="height: 80px; margin: 0px"></div>
+    </div>
+
+    <div id="offcanvas-left" uk-offcanvas="" class="uk-offcanvas">
+        <div class="uk-offcanvas-bar">
+            <button class="uk-offcanvas-close uk-icon uk-close" type="button" uk-close="">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            xmlns="http://www.w3.org/2000/svg"
+            data-svg="close-icon"
+          >
+            <line
+              fill="none"
+              stroke="#000"
+              stroke-width="1.1"
+              x1="1"
+              y1="1"
+              x2="13"
+              y2="13"
+            ></line>
+            <line
+              fill="none"
+              stroke="#000"
+              stroke-width="1.1"
+              x1="13"
+              y1="1"
+              x2="1"
+              y2="13"
+            ></line>
+          </svg>
+        </button>
+            <div class="uk-section">
+                <ul class="uk-nav uk-nav-default">
+                    <li class="uk-active"><a href="">ダッシュボード123</a></li>
+                    <li class="uk-active"><a href="">ユーザー選択</a></li>
+                    <li class="uk-active"><a href="">健康管理チェック</a></li>
+                    <li class="uk-active"><a href="">温度管理チェック</a></li>
+                    <li class="uk-active"><a href="">セルフチェック</a></li>
+                    <li><a class="linkLogout">ログアウト</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End header -->
+    <div class="uk-margin-small-top uk-margin-small-left uk-margin-small-right uk-margin-bottom">
+        <h5 class="uk-heading-bullet">ダッシュボード</h5>
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-sm-12 col-lg-10">
+                <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match uk-grid" uk-grid="">
+                    <div class="uk-first-column">
+                        <div class="uk-card uk-card-primary uk-card-body">
+                            <h3 class="uk-card-title">0</h3>
+                            <p><span style="font-size: 1.2em">未完了</span></p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="uk-card uk-card-primary uk-card-body">
+                            <h3 class="uk-card-title">0</h3>
+                            <p><span style="font-size: 1.2em">期限切れタスク</span></p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="uk-card uk-card-primary uk-card-body">
+                            <h3 class="uk-card-title">0</h3>
+                            <p><span style="font-size: 1.2em">実行済みタスク</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+        <h5 class="uk-heading-bullet">承認待ち</h5>
+
+        <legend class="uk-legend"></legend>
+        <div class="table-responsive-sm table-responsive-md">
+            <div class="row h-100 justify-content-center align-items-center">
+                <div class="col-sm-12 col-md-12 col-lg-10 text-center" style="height: 400px">
+                    <table class="table table-bordered table-striped mb-0 uk-table uk-table-divider" id="filterPendingApprove">
+                        <thead>
+                            <tr>
+                                <th class="text-center d-none">内容</th>
+                                <th cmanFilterBtn class="text-center">内容</th>
+                                <th cmanFilterBtn class="text-center">依頼日</th>
+                                <th cmanFilterBtn class="text-center">依頼者</th>
+                                <th cmanFilterBtn class="text-center">期限</th>
+                                <th class="text-center">ステータス</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="d-none"></td>
+                                <td>HACCPについて1</td>
+                                <td>2020/03/05 09:10:00</td>
+                                <td>牧野1</td>
+                                <td>2020/03/31 23:59:59</td>
+                                <td>
+                                    <a href="#" class="uk-button uk-button-default uk-button-small uk-button-primary btnNextHealtyScreen">回答待ち</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="d-none"></td>
+                  <td>HACCPについて2</td>
+                  <td>2020/03/06 09:10:00</td>
+                  <td>牧野2</td>
+                  <td>2020/03/31 23:59:59</td>
+                  <td>
+                    <a
+                      href="#"
+                      class="uk-button uk-button-default uk-button-small uk-button-primary btnNextHealtyScreen"
+                      >回答待ち</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="d-none"></td>
+                  <td>HACCPについて3</td>
+                  <td>2020/03/07 09:10:00</td>
+                  <td>牧野3</td>
+                  <td>2020/03/31 23:59:59</td>
+                  <td>
+                    <a
+                      href="#"
+                      class="uk-button uk-button-default uk-button-small uk-button-primary btnNextHealtyScreen"
+                      >回答待ち</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="d-none"></td>
+                  <td>HACCPについて</td>
+                  <td>2020/03/05 09:10:00</td>
+                  <td>牧野</td>
+                  <td>2020/03/31 23:59:59</td>
+                  <td>
+                    <a
+                      href="#"
+                      class="uk-button uk-button-default uk-button-small uk-button-primary btnNextHealtyScreen"
+                      >回答待ち</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="d-none"></td>
+                  <td>HACCPについて</td>
+                  <td>2020/03/05 09:10:00</td>
+                  <td>牧野</td>
+                  <td>2020/03/31 23:59:59</td>
+                  <td>
+                    <a
+                      href="#"
+                      class="uk-button uk-button-default uk-button-small uk-button-primary btnNextHealtyScreen"
+                      >回答待ち</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="d-none"></td>
+                  <td>HACCPについて</td>
+                  <td>2020/03/05 09:10:00</td>
+                  <td>牧野</td>
+                  <td>2020/03/31 23:59:59</td>
+                  <td>
+                    <a
+                      href="#"
+                      class="uk-button uk-button-default uk-button-small uk-button-primary btnNextHealtyScreen"
+                      >回答待ち</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="d-none"></td>
+                  <td>HACCPについて</td>
+                  <td>2020/03/05 09:10:00</td>
+                  <td>牧野</td>
+                  <td>2020/03/31 23:59:59TRUONGTM</td>
+                  <td>
+                    <a
+                      href="#"
+                      class="uk-button uk-button-default uk-button-small uk-button-primary btnNextHealtyScreen"
+                      >回答待ち</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="d-none"></td>
+                  <td>HACCPについて</td>
+                  <td>2020/03/05 09:10:00</td>
+                  <td>牧野</td>
+                  <td>2020/03/31 23:59:59</td>
+                  <td>
+                    <a
+                      href="#"
+                      class="uk-button uk-button-default uk-button-small uk-button-primary btnNextHealtyScreen"
+                      >回答待ち</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="d-none"></td>
+                  <td>HACCPについて</td>
+                  <td>2020/03/05 09:10:00</td>
+                  <td>牧野</td>
+                  <td>2020/03/31 23:59:59</td>
+                  <td>
+                    <a
+                      href="#"
+                      class="uk-button uk-button-default uk-button-small uk-button-primary btnNextHealtyScreen"
+                      >回答待ち</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="d-none"></td>
+                  <td>HACCPについて</td>
+                  <td>2020/03/05 09:10:00</td>
+                  <td>牧野</td>
+                  <td>2020/03/31 23:59:59</td>
+                  <td>
+                    <a
+                      href="#"
+                      class="uk-button uk-button-default uk-button-small uk-button-primary btnNextHealtyScreen"
+                      >回答待ち</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="row mt-2 justify-content-center align-items-center">
+              <div
+                class="col-sm-6 col-lg-4 col-md-4 height-ie pagingNavigation"
+              >
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                      <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a
+                      >
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                    </ul>
+                                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <span>
+
+
+    </span>
+</body>
+
+</html>

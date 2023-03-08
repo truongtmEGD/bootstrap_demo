@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>UPR HACCP</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <link rel="stylesheet" href="lib/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/lib/dist/css/jquery-ui.css">
+    <link rel="stylesheet" href="/css/uikit.min.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/filter.css">
+    <link rel="stylesheet" href="/css/datepicker.min.css">
+    <link rel="stylesheet" href="/css/checksheet.css">
+    <link rel="stylesheet" href="/css/spinner.css">
+    <link href="/fonts/font-awesome.css" rel="stylesheet">
+
+
+    <script src="/lib/dist/js/jquery-3.4.1.min.js"></script>
+    <script src="/lib/dist/js/jquery-ui.min.js"></script>
+    <script src="/lib/dist/js/uikit.min.js"></script>
+    <script src="/lib/dist/js/uikit-icons.min.js"></script>
+    <script src="lib/dist/js/bootstrap.min.js" rel="stylesheet"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/filter.js"></script>
+    <script src="/js/refrigerator.js"></script>
+    <script src="/js/spinner.js"></script>
+
+
+    <script type="text/javascript" src="js/timePicker/jquery.min.js"></script>
+    <script type="text/javascript" src="js/timePicker/moment.min.js"></script>
+    <script type="text/javascript" src="js/timePicker/tempusdominus-bootstrap-4.min.js"></script>
+    <link rel="stylesheet" href="js/timePicker/tempusdominus-bootstrap-4.min.css" />
+
+
+
+
+</head>
+
+<body style="overflow-x: hidden;">
+    <!-- Begin header -->
+    <div class="uk-preserve-color" style="border-bottom:solid 1px #cccccc">
+        <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200" class="uk-sticky">
+            <div class="uk-navbar-container uk-light uk-navbar-transparent uk-navbar" uk-navbar="">
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-toggle uk-icon uk-navbar-toggle-icon" uk-navbar-toggle-icon="" href="" uk-toggle="target: #offcanvas-left" style="color:#666666"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="navbar-toggle-icon"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg></a>
+                </div>
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo" href="#"><img src="/images/upr_logo.jpg" alt="UPR HACCP" style="height:40px;"></a>
+                </div>
+            </div>
+        </div>
+        <div class="uk-sticky-placeholder" hidden="" style="height: 80px; margin: 0px;"></div>
+    </div>
+
+    <div id="offcanvas-left" uk-offcanvas="" class="uk-offcanvas">
+        <div class="uk-offcanvas-bar">
+            <button class="uk-offcanvas-close uk-icon uk-close" type="button" uk-close=""><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" data-svg="close-icon"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+            <div class="uk-section">
+                <ul class="uk-nav uk-nav-default">
+                    <li class="uk-active"><a href="">ダッシュボード</a></li>
+                    <li class="uk-active"><a href="">ユーザー選択</a></li>
+                    <li class="uk-active"><a href="">健康管理チェック</a></li>
+                    <li class="uk-active"><a href="">温度管理チェック</a></li>
+                    <li class="uk-active"><a href="">セルフチェック</a></li>
+                    <li><a class="linkLogout">ログアウト</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <!-- End header -->
+
+    <div class="row mt-2">
+        <div class="col-md-6">
+            <h5 class="uk-heading-bullet">冷蔵・冷凍庫温度チェック　詳細確認</h5>
+        </div>
+    </div>
+    <legend class="uk-legend"></legend>
+
+    <div class="row">
+        <div class="col-md-1 col-sm-1">
+        </div>
+        <div class="col-md-6 col-lg-3 col-sm-12">
+            <div class="row mt-1 pl-4">
+                <p class="float-left" style="font-size: .875rem;color: #999; font-weight: bold;">【温度逸脱基準値：冷凍庫‐20 °C以下・冷蔵庫5°C以下】</p>
+            </div>
+            <div class="row mt-1 mb-2 pl-2">
+                <div class="col-md-4 col-sm-4 mb-2">
+                    <input type="button" style="padding:0 !important" class="uk-button uk-button-primary uk-button-large uk-width-1-1 bg-warning" name="btnOpenStore" id="btnOpenStore" value="開店時">
+
+                </div>
+                <div class="col-md-4 col-sm-4 mb-2">
+                    <input type="button" class="uk-button uk-button-primary uk-button-large uk-width-1-1" style="background-color: #cce5ff;padding:0 !important" name="btnBusiness" id="btnBusiness" value="営業時">
+
+                </div>
+                <div class="col-md-4 col-sm-4 mb-2">
+                    <input type="button" class="uk-button uk-button-primary uk-button-large uk-width-1-1" style="background-color: #cce5ff;padding:0 !important" name="btnCloseBusiness" id="btnCloseBusiness" value="閉店時">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 col-sm-1">
+        </div>
+    </div>
+    <div class="table-responsive-sm table-responsive-md">
+
+        <div class="row h-100 justify-content-center align-items-center ">
+            <div class="col-sm-12 col-md-12 col-lg-10 text-center" style="height: 400px;">
+
+                <table class=" table table-bordered table-striped mb-0 uk-table uk-table-divider" id="filterPendingApprove">
+                    <thead>
+                        <tr>
+                            <th class="text-center d-none"></th>
+                            <th cmanFilterBtn class="text-center" style="width: 20%;">
+                                <span>対象</span>
+                            </th>
+                            <th cmanFilterBtn class="text-center" style="width: 20%;">
+                                <span>確認時刻</span>
+                            </th>
+                            <th cmanFilterBtn class="text-center" style="width: 20%;">
+                                <span>温度</span>
+                            </th>
+                            <th cmanFilterBtn class="text-center" style="width: 20%;">
+                                <span>対応</span>
+
+                            </th>
+                            <th cmanFilterBtn class="text-center" style="width: 10%;">
+                                <span>確認者</span>
+                            </th>
+                            <th class="text-center" style="width: 10%;">
+                                <span>編集</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="d-none"></td>
+                            <td>Text 1</td>
+                            <td>16:50</td>
+                            <td>
+                                <span class="text-danger">7</span>
+                            </td>
+                            <td>Text 1</td>
+                            <td>Text 2</td>
+                            <td>
+                                <a href="" data-toggle="modal" data-target="#editChecksheetModal" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal">編集</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="d-none"></td>
+                            <td>Text 1</td>
+                            <td>16:50</td>
+                            <td>
+                                <span class="text-danger">7</span>
+                            </td>
+                            <td>Text 1</td>
+                            <td>Text 2</td>
+                            <td>
+                                <a href="" data-toggle="modal" data-target="#editChecksheetModal" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal">編集</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="d-none"></td>
+                            <td>Text 1</td>
+                            <td>16:50</td>
+                            <td>
+                                <span class="text-danger">7</span>
+                            </td>
+                            <td>Text 1</td>
+                            <td>Text 2</td>
+                            <td>
+                                <a href="" data-toggle="modal" data-target="#editChecksheetModal" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal">編集</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="d-none"></td>
+                            <td>Text 1</td>
+                            <td>16:50</td>
+                            <td>
+                                <span class="text-danger">7</span>
+                            </td>
+                            <td>Text 1</td>
+                            <td>Text 2</td>
+                            <td>
+                                <a href="" data-toggle="modal" data-target="#editChecksheetModal" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal uk-button-dange">編集</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="d-none"></td>
+                            <td>Text 1</td>
+                            <td>16:50</td>
+                            <td>
+                                <span>7</span>
+                            </td>
+                            <td>Text 1</td>
+                            <td>Text 2</td>
+                            <td>
+                                <a href="" data-toggle="modal" data-target="#editChecksheetModal" class="uk-button uk-button-default uk-button-small uk-button-primary uk-bt-modal uk-button-dange">編集</a>
+                            </td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+                <div class="row mt-2 justify-content-center align-items-center ">
+                    <div class="col-sm-6 col-lg-4 col-md-4 height-ie pagingNavigation ">
+                        <nav aria-label="Page navigation example ">
+                            <ul class="pagination justify-content-center ">
+                                <li class="page-item disabled ">
+                                    <a class="page-link " href="# " tabindex="-1 ">Previous</a>
+                                </li>
+                                <li class="page-item active "><a class="page-link " href="# ">1</a></li>
+                                <li class="page-item ">
+                                    <a class="page-link " href="# ">2 <span class="sr-only ">(current)</span></a>
+                                </li>
+                                <li class="page-item "><a class="page-link " href="# ">3</a></li>
+                                <li class="page-item ">
+                                    <a class="page-link " href="# ">Next</a>
+                                </li>
+
+                            </ul>
+
+                        </nav>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="chkApprove" name="chkApprove">
+                        <label class="custom-control-label" for="chkApprove">承認する</label>
+                    </div>
+
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-sm-12 col-md-3">
+                        <div class="row pl-2">
+                            <div class="col-lg-6 col-md-6 col-sm-6" style="margin-bottom: 10px;">
+                                <a href="# " class="uk-button uk-button-default uk-button-small uk-button-primary " style="width: 100%;line-height: 30px !important;">保存</a>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-md-6">
+                                <a href="../refrigeratorList.html" class="uk-button uk-button-default uk-button-small uk-button-primary" style="width: 100%;line-height: 30px !important;color: #000;background-color: #fff;border: 1px solid #1e87f0;">戻る</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+
+    <div class="modal fade" id="editChecksheetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="width: 100%;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update checksheet</h5><br />
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="updateChecksheet" action="" method="post">
+                        <div class="row mt-1">
+                            <div class="col-3">
+                                <label class="labelUpdate">日付&ensp;:</label>
+                            </div>
+                            <div class="col-6">
+                                <label class="" id="lblDateCheck" name="lblDateCheck">2020/04/11</label>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-3">
+                                <label class="labelUpdate">対象&ensp;:</label>
+                            </div>
+                            <div class="col-6">
+                                <label class="" id="lblTarget" name="lblTarget">冷蔵庫2</label>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-3">
+                                <label class="labelUpdate">タイミング&ensp;:</label>
+                            </div>
+                            <div class="col-6">
+                                <label class="" id="lblTiming" name="lblTiming">開店前</label>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-3">
+                                <label class="labelUpdate">作業者&ensp;:</label>
+                            </div>
+                            <div class="col-6">
+                                <select class="uk-select" id="cmbEmployeeName" name="cmbEmployeeName">
+                                    <option value=""></option>
+                                    <option value="">山本太郎</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mt-1">
+                            <div class="col-3">
+                                <label class="labelUpdate">確認時刻&ensp;:</label>
+                            </div>
+                            <div class="col-4">
+                                <div class="input-group date timePickerInput" id="timeConfirm" data-target-input="nearest">
+                                    <input type="text" class="form-control datetimepicker-input" data-target="#timeConfirm" maxlength="5" />
+                                    <div class="input-group-append" data-target="#timeConfirm" data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-3">
+                                <label class="labelUpdate">温度&ensp;:</label>
+                            </div>
+                            <div class="col-4">
+                                <!-- <input class="form-control" type="text" id="txtTemperature" name="txtTemperature" maxlength="5" /> -->
+                                <div class="input-group spinner">
+                                    <input type="text" class="form-control" id="editNumber" value="0">
+                                    <div class="input-group-btn-vertical">
+                                        <div class="btn btn-default"><i class="fa fa-caret-up"></i></div>
+                                        <div class="btn btn-default"><i class="fa fa-caret-down"></i></div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="row mt-1">
+                            <div class="col-3">
+                                <label class="labelUpdate">対応&ensp;:</label>
+                            </div>
+                            <div class="col-9">
+                                <textarea class="form-control" id="txtSolution" rows="5" maxlength="2000" name="txtSolution" placeholder=""></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn uk-button-primary uk-button-large uk-bt-modal btnUpdateChecksheet" id="btnSaveEdit" name="btnSaveEdit">保存</button>
+                    <button type="button" class="btn uk-button-primary uk-button-large uk-bt-modal bg-warning btnUpdateChecksheet" data-dismiss="modal">戻る</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,354 @@
+body {
+  background-color: #f2f2f2;
+}
+.bannerLogoRight {
+  margin: 17.6px 35px 12px 0;
+}
+.imgLogoRight {
+  margin-bottom: 7.5px;
+}
+.logoTextRight {
+  font-size: 13px;
+}
+
+.headerLogin {
+  height: 50px;
+  background-color: #707070;
+}
+.headLogin {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 9px 0 14px 37px;
+}
+.header {
+  background-color: #ffffff;
+  padding: 0 0 10px 13px;
+}
+.imgLogo {
+  width: 127px;
+  height: 67px;
+  margin-right: 19px;
+}
+.logoText {
+  font-size: 16px;
+  margin: 29px 0 27px 0;
+}
+.lnkLogin {
+  margin: 17px 41px 17px 0;
+}
+.lnkLogin a {
+  color: #ffffff;
+  text-decoration: underline;
+  font-size: 12px;
+}
+.inputText::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  padding: 19px 0px 18px 0px;
+  height: 19px;
+  font-size: 14px;
+}
+
+.inputText:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  padding: 19px 0px 18px 0px;
+  height: 19px;
+  font-size: 14px;
+}
+
+.inputText::-ms-input-placeholder {
+  /* Microsoft Edge */
+  padding: 19px 0px 18px 0px;
+  height: 19px;
+  font-size: 14px;
+}
+
+.btnBack {
+  width: 150px;
+  height: 50px;
+  border-radius: 4px;
+  -moz-border-radius: 4px; /*Firefox*/
+  -webkit-border-radius: 4px; /*Chrome và Safary*/
+  background-color: #f2f2f2;
+  border: 1px solid #d7d7d7;
+}
+.btnBack:hover {
+  background-color: #f2f2f2;
+  border: 1px solid #d7d7d7;
+  cursor: pointer;
+}
+.btnBack span{
+    color: #000000;
+    font-size: 14px;
+}
+
+/*Forgot password*/
+.frmForgot {
+    background-color: #ffffff;
+    margin-top: 60px !important;
+    width: 620px;
+    margin: 0 auto;
+    height: 480px;
+  }
+  .ctnFrmForgot {
+    padding: 33.5px 30px 0 30px;
+  }
+  .headerForgot {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid #f27700;
+    padding-bottom: 11.5px;
+    text-align: center;
+  }
+  .headerForgot span {
+    color: #000000;
+    font-size: 20px;
+    display: inline-block;
+  }
+  .description {
+    text-align: center;
+    margin: 33px 0 48px 0;
+  }
+  .description span,
+  .textQuote span {
+    color: #000000;
+    font-size: 14px;
+    display: inline-block;
+  }
+  .btnForgot {
+    width: 300px;
+    height: 50px;
+    border-radius: 4px;
+    -moz-border-radius: 4px; /*Firefox*/
+    -webkit-border-radius: 4px; /*Chrome và Safary*/
+    background-color: #F27700;
+    border:  #707070;
+  }
+  .btnForgot:hover {
+    background-color: #F27700;
+    cursor: pointer;
+  }
+  .btnForgot span{
+      color: #FFFFFF;
+      font-size: 14px;
+  }
+  
+/*End forgot password*/
+
+/*For table calendar*/
+
+.scrollme {
+  overflow-x: auto;
+}
+.wrapper{
+  position: relative;
+}
+
+.scroller{
+  overflow-x: auto;
+}
+.colDetail{
+  width: 116px !important;
+}
+.dataTable{
+  table-layout: fixed;    	   	
+}
+.bookingStatus{
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+-moz-border-radius: 4px; /*Firefox*/
+-webkit-border-radius: 4px; /*Chrome và Safary*/
+padding: 5px 0px 5px 0px;
+text-align: center;
+margin-left: -1px;
+}
+.bookingStatus span{
+  font-size: 12px;
+  color: #FFFFFF;
+}
+
+.firstCol{
+  width: 144px;
+  height: 71px !important;
+  padding-bottom: 20px !important;
+  
+}
+.secondCol{
+  width: 79px;
+  height: 71px !important;
+  padding-bottom: 20px !important;
+}
+.calendarCol{
+  width: 116px;
+}
+.detaiList{
+  font-size: 14px;
+}
+.detaiList thead tr th{
+  height: 52px;
+}
+.dataStatus{
+  padding-left: 16px;
+}
+.detaiList tr{
+  height: 52px;
+  border:1px solid #707070 !important;
+}
+.detaiList tr.rowOne{
+  background-color: #FFFFFF;
+}
+.detaiList tr.rowTwo{
+  background-color: #F2F1EA;
+}
+.detaiList tr.rowThree{
+  background-color: #EDE8C9;
+}
+.textDate{
+  color: #000000;
+  font-size: 16px !important;
+}
+.textDay{
+  color: #000000;
+  font-size: 11px !important;
+}
+.sartuday{
+  color: #2373D1;
+}
+.sunday{
+  color: #D1232D;
+}
+/*End For table calendar*/
+
+/*For dropdownlist*/
+select:hover{
+  cursor: pointer;
+}
+select option:hover{
+  cursor: pointer;
+}
+.selectParent {
+	width: 153px;
+  height: 36px;
+	overflow:hidden;   
+}
+.selectParent select {
+  border-radius: 4px;
+  -moz-border-radius: 4px; /*Firefox*/
+  -webkit-border-radius: 4px; /*Chrome và Safary*/ 
+	display: block;
+  width: 100%;
+  height: 100%;
+	padding: 6px 0 9px 14px;
+	border:1px solid #E3E3E3;
+  background: url("/images/arrow.png") no-repeat; 
+  background-position: right 12.5px center;
+	appearance: none; 
+	-webkit-appearance: none;
+	-moz-appearance: none; 
+}
+/* .selectParent.left select {
+	direction: rtl;
+	padding: 2px 2px 2px 25px;
+	background-position: left center;
+}
+select::-ms-expand { 
+	display: none; 
+} */
+/*End dropdownlist*/
+
+
+/*Dropdown modal*/
+.vehiceDropdown {
+	width: 137px;
+  height: 36px;
+  overflow:hidden;
+  margin: 9px 13px 8px 0;   
+}
+.vehiceDropdown select {
+  border-radius: 5px;
+  -moz-border-radius: 5px; /*Firefox*/
+  -webkit-border-radius: 5px; /*Chrome và Safary*/ 
+	display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+	padding: 7.5px 0 9.5px 14px;
+	border:1px solid #E3E3E3;
+  background: url("/images/arrowDropdownModal.png") no-repeat; 
+  background-position: right 10.5px center;
+	appearance: none; 
+	-webkit-appearance: none;
+	-moz-appearance: none; 
+}
+/*End dropdown modal*/
+/*For checkbox*/
+.checkboxGroup{
+  margin: 14px 0 19px 0;
+}
+.containerCheckbox {
+  display: inline;
+  position: relative;
+  cursor: pointer;
+  color: #000000;
+  font-size: 14px;
+  margin-right: 13px;
+  vertical-align: middle;
+  padding-left: 25px;
+}
+ .containerCheckbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+ .checkmark {
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border: 1px solid #D7D7D7;
+    border-radius: 2px;
+  -moz-border-radius: 2px; /*Firefox*/
+  -webkit-border-radius: 2px; /*Chrome và Safary*/
+}
+.containerCheckbox:hover input ~ .checkmark {
+  background-color: #fff;
+}
+.containerCheckbox input:checked ~ .checkmark {
+  background-color: #fff;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.containerCheckbox input:checked ~ .checkmark:after {
+  display: block;
+}
+.containerCheckbox .checkmark:after {
+  left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #037AFF;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/*End checkbox*/
+/*Begin Textarea*/
+.textAreaComment{
+  width: 403px;
+  border-radius: 5px;
+  -moz-border-radius: 5px; /*Firefox*/
+  -webkit-border-radius: 5px; /*Chrome và Safary*/
+}
+.vehiceComment{
+  margin: 10px 0 0 60px;
+}
+/*End textarea*/
